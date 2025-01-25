@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 
 #ifdef _WIN32
     #define CLEAR "cls"
-#elif __linux__
+#elif __linux__ || (__APPLE__ && __MACH__)
     #define CLEAR "clear"
 #else
     #error "OS Not Supported"
@@ -36,9 +36,9 @@ void interface()
 {
     char input[TAM_INPUT];
     system(CLEAR);
-    printf("Simulador de Máquina de Turing ver. 1.1\nDesenvolvido como trabalho prático para ");
-    printf("a disciplina de Teoria da Computação\n");
-    printf("Autor: Júlio César M. Cândido - IFMG 2018 Campus Formiga.\n\nForneça a palavra inicial: ");
+    printf("Simulador de MÃ¡quina de Turing ver. 1.1\nDesenvolvido como trabalho prÃ¡tico para ");
+    printf("a disciplina de Teoria da ComputaÃ§Ã£o\n");
+    printf("Autor: JÃºlio CÃ©sar M. CÃ¢ndido - IFMG 2018 Campus Formiga.\n\nForneÃ§a a palavra inicial: ");
     scanf("%s", input);
     printf("\n");
     strncpy(fita, input, strlen(input));
@@ -47,11 +47,11 @@ void interface()
 void erroArgs(char *exec_name)
 {
     system(CLEAR);
-    printf("Error: Falta de parâmetro, exemplo:\n\n\t%s [Opções] [-head xx] <Fonte(MT)>\n\n", exec_name);
-    printf("Opções:\n\t< -r > Modo execução silenciosa (Padrão)\n\t");
+    printf("Error: Falta de parÃ¢metro, exemplo:\n\n\t%s [OpÃ§Ãµes] [-head xx] <Fonte(MT)>\n\n", exec_name);
+    printf("OpÃ§Ãµes:\n\t< -r > Modo execuÃ§Ã£o silenciosa (PadrÃ£o)\n\t");
     printf(" -v Modo debug, passo a passo\n\t");
-    printf(" -s n Executa n computações e espera uma novo modo de entrada\n\t");
-    printf(" -head xx Marcadores do cabeçote na impressão da fita\n\n");
-    printf(" Fonte(MT) Entrada com arquivo.MT com código de execução\n\n");
+    printf(" -s n Executa n computaÃ§Ãµes e espera uma novo modo de entrada\n\t");
+    printf(" -head xx Marcadores do cabeÃ§ote na impressÃ£o da fita\n\n");
+    printf(" Fonte(MT) Entrada com arquivo.MT com cÃ³digo de execuÃ§Ã£o\n\n");
     exit(1);
 }
