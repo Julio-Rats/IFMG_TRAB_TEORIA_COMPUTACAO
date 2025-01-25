@@ -17,7 +17,7 @@ static size_t n_exec = 0;
 */
 void setseekbloco(FILE *arq, char *name_bloco)
 {
-    strcpy(bloco_atual, name_bloco);
+    memmove(bloco_atual, name_bloco, strlen(name_bloco) + 1);
     for (size_t i = 0; i < n_blocos; i++)
         if (strcmp(blocos[i].name, name_bloco) == 0)
         {
