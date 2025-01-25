@@ -33,7 +33,7 @@ stack.o: stack.c stack.h decodc.h
 
 clean:
 	rm -f *.o
-	rm $(TARGET)
+	rm -f $(TARGET)
 
 clear:
 	rm -f *.o
