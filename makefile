@@ -1,6 +1,6 @@
 CC = gcc
 
-MYFLAGS = -g -O2 -Wall
+MYFLAGS = -g -O2 -Wall -fcommon
 
 TARGET = simturing
 
