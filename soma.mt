@@ -1,6 +1,6 @@
 ;
 ;
-;   Efetua a soma de dois números binários de mesmo tamanho
+;   Efetua a soma de dois nÃºmeros binÃ¡rios de mesmo tamanho
 ;   ambos separados por '#'
 ;
 ;   Exemplo: 010#101

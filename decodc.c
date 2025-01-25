@@ -2,29 +2,29 @@
 
 void getBlocos(FILE *arq)
 {
-  char **vetline;         // Saida da funÁ„o decodline.
+  char **vetline;         // Saida da fun√ß√£o decodline.
   char line[TAM_LINE];    // Vetor de char, pra leitura do arquivo.
   short int flag_fim = 0; // Fim da MT.
   n_blocos = 0;           // Tamanho do vetor blocos.
   rewind(arq);            // Reinicia ponteiro do arquivo.
-  // Faz leitura no aquivo, ate "\n ou \0", ou tamanho passado par‚metro.
+  // Faz leitura no aquivo, ate "\n ou \0", ou tamanho passado par√¢metro.
   fgets(line, TAM_LINE - 1, arq);
   while (!feof(arq))
   {
-    // Trata coment·rio com, com ";" no incio da linha.
+    // Trata coment√°rio com, com ";" no incio da linha.
     if (line[0] == ';')
     {
       fgets(line, TAM_LINE - 1, arq);
       continue;
     }
-    // Chamada da funÁ„o quebrando a linha em tokens.
+    // Chamada da fun√ß√£o quebrando a linha em tokens.
     vetline = decodline(line);
     if (!vetline)
     {
       fgets(line, TAM_LINE - 1, arq);
       continue;
     }
-    // Verifica se a linha È uma declaraÁ„o de um bloco.
+    // Verifica se a linha √© uma declara√ß√£o de um bloco.
     if ((strcmp(vetline[0], "bloco") == 0) && flag_fim)
     {
       fprintf(stderr, "\nERROR SINTAXE BLOCOS, BLOCO '%s'\n\n", blocos[n_blocos - 1].name);
@@ -57,7 +57,7 @@ void getBlocos(FILE *arq)
         blocos = (bloco *)realloc(blocos, sizeof(bloco) * (++n_blocos));
       // Setando o bloco no vetor blocos.
       strcpy(blocos[n_blocos - 1].name, vetline[1]);
-      blocos[n_blocos - 1].position_file = ftell(arq); // posiÁ„o no arquivo.
+      blocos[n_blocos - 1].position_file = ftell(arq); // posi√ß√£o no arquivo.
       strcpy(blocos[n_blocos - 1].initState, vetline[2]);
     }
     if (strcmp(vetline[0], "fim") == 0)
@@ -75,16 +75,16 @@ void getBlocos(FILE *arq)
 
 char **decodline(char *line)
 {
-  char **vetoken = NULL; // Vetor de string de saÌda.
+  char **vetoken = NULL; // Vetor de string de sa√≠da.
   char *token = NULL;    // String usada para strtok.
   cont = 0;              // Tamanho do Vetor de string (vetoken).
 
-  token = strtok(line, ";\n");  // Trata coment·rio no meio da linha.
-  token = strtok(token, " \t"); // Quebra em tabulaÁ„o e/ou espaÁo dos tokens.
+  token = strtok(line, ";\n");  // Trata coment√°rio no meio da linha.
+  token = strtok(token, " \t"); // Quebra em tabula√ß√£o e/ou espa√ßo dos tokens.
 
   while (token)
   {
-    // Aloca e expande o tamanho do vetor para saÌda.
+    // Aloca e expande o tamanho do vetor para sa√≠da.
     if (!vetoken)
       vetoken = (char **)malloc((++cont) * sizeof(char *));
     else

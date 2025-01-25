@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include "decodc.h"
 
-typedef struct cell cell;     //  Célula com dados e ponteiro da pilha.
+typedef struct cell cell;     //  CÃ©lula com dados e ponteiro da pilha.
 typedef struct recall recall; //  Estrutura com dados dos blocos.
 typedef struct stack stack;   //  Ponteiro topo da pilha.
 
@@ -19,7 +19,7 @@ struct cell // Estrutura a ser empilhada na pilha.
     cell *bot;
 };
 
-struct recall // Estrutura dos dados alocados na célula.
+struct recall // Estrutura dos dados alocados na cÃ©lula.
 {
     char recall_bloco[TAM_BLOCK]; // Nome do bloco.
     char recall_state[TAM_STATE];

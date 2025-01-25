@@ -1,6 +1,6 @@
 CC = gcc
 
-MYFLAGS = -g -O2 -Wall
+MYFLAGS = -g -O2 -Wall -fcommon
 
 TARGET = simturing
 
@@ -33,7 +33,7 @@ stack.o: stack.c stack.h decodc.h
 
 clean:
 	rm -f *.o
-	rm $(TARGET)
+	rm -f $(TARGET)
 
 clear:
 	rm -f *.o

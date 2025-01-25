@@ -2,17 +2,17 @@
 
 void decodArgs(int argc, char *argv[])
 {
-    modo = type_r; // Modo setado em modo padrão .
-    n_step = 1;    // Numero padrão parâmetro -s.
-    step_arg = 1;  // Numero padrão parâmetro -s.
+    modo = type_r; // Modo setado em modo padrÃ£o .
+    n_step = 1;    // Numero padrÃ£o parÃ¢metro -s.
+    step_arg = 1;  // Numero padrÃ£o parÃ¢metro -s.
 
-    strncpy(delim_cabecote, DELIM_PADRAO, 2); // Setando os delimitadores do cabeçote padrão "( )".
+    strncpy(delim_cabecote, DELIM_PADRAO, 2); // Setando os delimitadores do cabeÃ§ote padrÃ£o "( )".
 
     if (argc == 2)
         return;
 
     for (size_t i = 1; i < argc; i++)
-        // Pega os PARÂMETROS.
+        // Pega os PARÃ‚METROS.
         if (argv[i][0] == '-')
         {
             if (strcmp(argv[i], "-r") == 0)
@@ -25,12 +25,12 @@ void decodArgs(int argc, char *argv[])
                 modo = type_s; // Tipo -s
                 if (argc >= (i + 1))
                 {
-                    // Pegando e tratando parâmetro -s
+                    // Pegando e tratando parÃ¢metro -s
                     n_step = atol(argv[i + 1]) + 1;
                     step_arg = n_step;
                     if (n_step == 0)
                     {
-                        fprintf(stderr, "\nERROR PARÂMETRO '-S' VALOR \"N\" NÃO INFORMADO OU IGUAL A ZERO\n\n");
+                        fprintf(stderr, "\nERROR PARÃ‚METRO '-S' VALOR \"N\" NÃƒO INFORMADO OU IGUAL A ZERO\n\n");
                         exit(EXIT_FAILURE);
                     }
                 }
@@ -43,8 +43,8 @@ void decodArgs(int argc, char *argv[])
             }
             else
             {
-                // Parâmetro invalido.
-                fprintf(stderr, "\nERROR SINTAXE PARÂMETRO %s INVALIDO\n\n", argv[i]);
+                // ParÃ¢metro invalido.
+                fprintf(stderr, "\nERROR SINTAXE PARÃ‚METRO %s INVALIDO\n\n", argv[i]);
                 exit(EXIT_FAILURE);
             }
         }
