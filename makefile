@@ -1,6 +1,6 @@
 CC = gcc
 
-MYFLAGS = -g -O2 -Wall -fcommon
+MYFLAGS = -g -O2 -Wall -fcommon -fsanitize=address
 
 TARGET = simturing
 
@@ -13,7 +13,7 @@ all:
 
 # regras para gerar o executavel
 $(TARGET): $(OBJFILES) 
-	$(CC) -o $(TARGET) $(OBJFILES) 
+	$(CC) $(MYFLAGS) -o $(TARGET) $(OBJFILES) 
 
 # regras de compilação
 decodArgs.o: decodArgs.c decodArgs.h
