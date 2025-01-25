@@ -7,7 +7,7 @@
 
 #define DELIM_PADRAO "()\0"
 /*
-    Enum para definir qual PAR?METRO de impress„o a MT executara.
+    Enum para definir qual PAR√ÇMETRO de impress√£o a MT executara.
 */
 
 typedef enum
@@ -17,13 +17,13 @@ typedef enum
     type_s  //  Tipo n step para e pega novo modo
 } type_mod;
 
-type_mod modo; // Vari·vel GLOBAL de controle de PAR¬METRO
+type_mod modo; // Vari√°vel GLOBAL de controle de PAR√ÇMETRO
 
-size_t n_step;          // vari·vel de controle para entrada do tipo -S (numero de passos)
-size_t step_arg;        // vari·vel de controle para novas entradas do tipo -s
-char delim_cabecote[3]; // Delimitador do cabeÁote entrada -h
+size_t n_step;          // vari√°vel de controle para entrada do tipo -S (numero de passos)
+size_t step_arg;        // vari√°vel de controle para novas entradas do tipo -s
+char delim_cabecote[3]; // Delimitador do cabe√ßote entrada -h
 
-// LÍ os par‚metros e decodifica.
+// L√™ os par√¢metros e decodifica.
 
 void decodArgs(int argc, char *argv[]);
 

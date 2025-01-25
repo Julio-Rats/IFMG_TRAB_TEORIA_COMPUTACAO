@@ -18,23 +18,23 @@ typedef struct
 {
   char name[TAM_BLOCK];      // Nome do bloco declarado.
   char initState[TAM_STATE]; // Estado inicial do bloco.
-  size_t position_file;      // posição do bloco no arquivo.
+  size_t position_file;      // posiÃ§Ã£o do bloco no arquivo.
 } bloco;
 
 /*
   blocos:   Nome dado ao vetor com todos os blocos encontrados no arquivo.
   n_blocos: Indicador do tamanho do vetor blocos, com struct bloco.
-  cont:     Indicador do tamanho do vetor de saída da função decodline.
+  cont:     Indicador do tamanho do vetor de saÃ­da da funÃ§Ã£o decodline.
 */
 
 bloco *blocos;
 size_t n_blocos;
 size_t cont;
 
-/* Função getBlocos: pega todos os blocos no arquivo, salvando em uma lista
-      com nome, posição no arquivo e estado inicial do bloco de instrução.
+/* FunÃ§Ã£o getBlocos: pega todos os blocos no arquivo, salvando em uma lista
+      com nome, posiÃ§Ã£o no arquivo e estado inicial do bloco de instruÃ§Ã£o.
 
-   Função decodline: pega uma linha como entrada e quebra em
+   FunÃ§Ã£o decodline: pega uma linha como entrada e quebra em
           tokens e retorna um vetor de strings com os tonkes.
 */
 

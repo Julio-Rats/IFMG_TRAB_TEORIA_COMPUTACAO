@@ -1,6 +1,6 @@
 ;
-;	Verifica se a sequencia de 0 e 1, È uma palindrome
-;	 respondendo sim ou n„o.
+;	Verifica se a sequencia de 0 e 1, √© uma palindrome
+;	 respondendo sim ou n√£o.
 ;
 bloco main 01
 
