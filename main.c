@@ -39,6 +39,7 @@ void interface()
     printf("Simulador de Máquina de Turing ver. 1.1\nDesenvolvido como trabalho prático para ");
     printf("a disciplina de Teoria da Computação\n");
     printf("Autor: Júlio César M. Cândido - IFMG 2018 Campus Formiga.\n\nForneça a palavra inicial: ");
+    fflush(stdout);
     scanf("%s", input);
     printf("\n");
     strncpy(fita, input, strlen(input));
